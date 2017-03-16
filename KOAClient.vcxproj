@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F813CF9-46B2-4C77-B5DB-D825CC48B734}</ProjectGuid>
+    <RootNamespace>KOAClient</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\prog$(Configuration)\</OutDir>
+    <IncludePath>C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.14393.0\ucrt;C:\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Windows Kits\10\Lib\10.0.14393.0\ucrt\x86;C:\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\prog$(Configuration)\</OutDir>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;.\;..\..\00shcode\;..\..\01prjsh;..\formula\;..\link\</AdditionalIncludeDirectories>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;version.lib;link.lib;formula.lib;ssleay32s.lib;libeay32s.lib</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <UACUIAccess>false</UACUIAccess>
+      <AdditionalLibraryDirectories>E:\Source\gzqhotc\00shcode\openssl;%(AdditionalLibraryDirectories);..\prog$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;.\;..\..\00shcode\;..\..\01prjsh;..\link\</AdditionalIncludeDirectories>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>version.lib;ws2_32.lib;link.lib;formula.lib;</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <AdditionalLibraryDirectories>..\prog$(Configuration)\;</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\prog\interface\koa.ico" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\188.BMP" />
+    <None Include="res\aa.bmp" />
+    <None Include="res\arrow.bmp" />
+    <None Include="res\arrow1.bmp" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap2.bmp" />
+    <None Include="res\bitmap3.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\cancelbtn.bmp" />
+    <None Include="res\classview.bmp" />
+    <None Include="res\classview_hc.bmp" />
+    <None Include="res\class_view.ico" />
+    <None Include="res\class_view_hc.ico" />
+    <None Include="res\Down2.bmp" />
+    <None Include="res\exitbtn.bmp" />
+    <None Include="res\file_view.ico" />
+    <None Include="res\file_view_hc.ico" />
+    <None Include="res\html.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\icon1.ico" />
+    <None Include="res\koa.ico" />
+    <None Include="res\KOAClient .ico" />
+    <None Include="res\KOAClient.ico" />
+    <None Include="res\KOAClient.rc2" />
+    <None Include="res\KOAClientDoc.ico" />
+    <None Include="res\koat.ico" />
+    <None Include="res\loginbtn.bmp" />
+    <None Include="res\output_wnd.ico" />
+    <None Include="res\output_wnd_hc.ico" />
+    <None Include="res\py.txt" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\toolbar2.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="res\Up2.bmp" />
+    <None Include="res\划线工具条.bmp" />
+    <None Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\CPucHead.h" />
+    <ClInclude Include="..\include\CSkinTransform.h" />
+    <ClInclude Include="..\include\DialogMultiLan.h" />
+    <ClInclude Include="..\include\GraphBtn.h" />
+    <ClInclude Include="..\include\HtmlShow.h" />
+    <ClInclude Include="..\include\StatLst.h" />
+    <ClInclude Include="..\include\TabLst.h" />
+    <ClInclude Include="..\include\TranslucentBtn.h" />
+    <ClInclude Include="..\include\TransparentStat.h" />
+    <ClInclude Include="..\include\UScrollBar.h" />
+    <ClInclude Include="..\include\WDialog.h" />
+    <ClInclude Include="..\include\WRestoreButton.h" />
+    <ClInclude Include="..\include\WWndLessButton.h" />
+    <ClInclude Include="analisysobj.h" />
+    <ClInclude Include="BaseDrawObj.h" />
+    <ClInclude Include="BaseHisPic.h" />
+    <ClInclude Include="BaseInfoItem.h" />
+    <ClInclude Include="BasePic.h" />
+    <ClInclude Include="BaseTable.h" />
+    <ClInclude Include="CCustomUser.h" />
+    <ClInclude Include="ChangePswdForm.h" />
+    <ClInclude Include="ColorDefPic.h" />
+    <ClInclude Include="DateManage.h" />
+    <ClInclude Include="DateManage_ZYQ.h" />
+    <ClInclude Include="DefineTradView.h" />
+    <ClInclude Include="distractstattable.h" />
+    <ClInclude Include="DlgAgentSetting.h" />
+    <ClInclude Include="DlgBinManagePack.h" />
+    <ClInclude Include="DlgDrawTool.h" />
+    <ClInclude Include="DlgFundInfoPack.h" />
+    <ClInclude Include="DlgLockMain.h" />
+    <ClInclude Include="DlgLogin1.h" />
+    <ClInclude Include="DlgMainClient.h" />
+    <ClInclude Include="DlgMainWnd.h" />
+    <ClInclude Include="DlgMetalsMarket.h" />
+    <ClInclude Include="DlgPopMenu.h" />
+    <ClInclude Include="DlgPrice.h" />
+    <ClInclude Include="DlgPriceInfo.h" />
+    <ClInclude Include="DlgPriceInfoPack.h" />
+    <ClInclude Include="DlgPriceInfoWnd.h" />
+    <ClInclude Include="DlgPriceList.h" />
+    <ClInclude Include="DlgShowUrl.h" />
+    <ClInclude Include="DlgSpotInfo.h" />
+    <ClInclude Include="DlgSpotMarket.h" />
+    <ClInclude Include="DlgStatus.h" />
+    <ClInclude Include="DlgTopToolbar.h" />
+    <ClInclude Include="DlgTradeInfo.h" />
+    <ClInclude Include="DlgTradeInfoPop.h" />
+    <ClInclude Include="DlgTrendChart.h" />
+    <ClInclude Include="DlgTrendChartSpot.h" />
+    <ClInclude Include="DlgTrendChart_D.h" />
+    <ClInclude Include="DlgUpdateSelect.h" />
+    <ClInclude Include="DlgWarnInfo.h" />
+    <ClInclude Include="DlgWarnInfoEx.h" />
+    <ClInclude Include="DpTable.h" />
+    <ClInclude Include="DrawBaseY.h" />
+    <ClInclude Include="drawlineDll.h" />
+    <ClInclude Include="DrawLineT.h" />
+    <ClInclude Include="DrawLineTool.h" />
+    <ClInclude Include="DynBasePic.h" />
+    <ClInclude Include="HisTechObj.h" />
+    <ClInclude Include="HtmlCtrl.h" />
+    <ClInclude Include="HyperlinkStatic.h" />
+    <ClInclude Include="IdentifyCode.h" />
+    <ClInclude Include="InfoTable.h" />
+    <ClInclude Include="IniFile.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="InputKey.h" />
+    <ClInclude Include="InterfaceManager.H" />
+    <ClInclude Include="KOAClient.h" />
+    <ClInclude Include="KOAClientDoc.h" />
+    <ClInclude Include="LanguageInterface.h" />
+    <ClInclude Include="LimitPriceTrade.h" />
+    <ClInclude Include="LoginDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MarketPriceTrade.h" />
+    <ClInclude Include="markup.h" />
+    <ClInclude Include="MultipleData.h" />
+    <ClInclude Include="PictureEx.h" />
+    <ClInclude Include="PriceInfoObj.h" />
+    <ClInclude Include="PriceInfoView.h" />
+    <ClInclude Include="PriceInfoWnd.h" />
+    <ClInclude Include="PriceListView.h" />
+    <ClInclude Include="PriceListWnd.h" />
+    <ClInclude Include="PricePic.h" />
+    <ClInclude Include="PriceVolObj.h" />
+    <ClInclude Include="Public.h" />
+    <ClInclude Include="PubZYQ.h" />
+    <ClInclude Include="quotedefzyq.h" />
+    <ClInclude Include="ReportTable.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StockView.h" />
+    <ClInclude Include="SysProtyDlg.h" />
+    <ClInclude Include="SysSetDlg.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TechAnalysisBasePic.h" />
+    <ClInclude Include="TechAnalysisKLine.h" />
+    <ClInclude Include="TechAnalysisSelf.h" />
+    <ClInclude Include="TechCreator.h" />
+    <ClInclude Include="TechIndexFactory.h" />
+    <ClInclude Include="TradeDll.h" />
+    <ClInclude Include="TradeWnd.h" />
+    <ClInclude Include="translateStruct.h" />
+    <ClInclude Include="TypeCtlPic.h" />
+    <ClInclude Include="XPButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\include\CSkinTransform.cpp" />
+    <ClCompile Include="..\include\DialogMultiLan.cpp" />
+    <ClCompile Include="..\include\GraphBtn.cpp" />
+    <ClCompile Include="..\include\HtmlShow.cpp" />
+    <ClCompile Include="..\include\StatLst.cpp" />
+    <ClCompile Include="..\include\TabLst.cpp" />
+    <ClCompile Include="..\include\TranslucentBtn.cpp" />
+    <ClCompile Include="..\include\TransparentStat.cpp" />
+    <ClCompile Include="..\include\UScrollBar.cpp" />
+    <ClCompile Include="..\include\WDialog.cpp" />
+    <ClCompile Include="..\include\WRestoreButton.cpp" />
+    <ClCompile Include="..\include\WWndLessButton.cpp" />
+    <ClCompile Include="analisysobj.cpp" />
+    <ClCompile Include="BaseDrawObj.cpp" />
+    <ClCompile Include="BaseHisPic.cpp" />
+    <ClCompile Include="BaseInfoItem.cpp" />
+    <ClCompile Include="BasePic.cpp" />
+    <ClCompile Include="BaseTable.cpp" />
+    <ClCompile Include="ChangePswdForm.cpp" />
+    <ClCompile Include="ColorDefPic.cpp" />
+    <ClCompile Include="DateManage.cpp" />
+    <ClCompile Include="DateManage_ZYQ.cpp" />
+    <ClCompile Include="DefineTradView.cpp" />
+    <ClCompile Include="distractstattable.cpp" />
+    <ClCompile Include="DlgAgentSetting.cpp" />
+    <ClCompile Include="DlgBinManagePack.cpp" />
+    <ClCompile Include="DlgDrawTool.cpp" />
+    <ClCompile Include="DlgFundInfoPack.cpp" />
+    <ClCompile Include="DlgLockMain.cpp" />
+    <ClCompile Include="DlgLogin1.cpp" />
+    <ClCompile Include="DlgMainClient.cpp" />
+    <ClCompile Include="DlgMainWnd.cpp" />
+    <ClCompile Include="DlgMetalsMarket.cpp" />
+    <ClCompile Include="DlgPopMenu.cpp" />
+    <ClCompile Include="DlgPrice.cpp" />
+    <ClCompile Include="DlgPriceInfo.cpp" />
+    <ClCompile Include="DlgPriceInfoPack.cpp" />
+    <ClCompile Include="DlgPriceInfoWnd.cpp" />
+    <ClCompile Include="DlgPriceList.cpp" />
+    <ClCompile Include="DlgShowUrl.cpp" />
+    <ClCompile Include="DlgSpotInfo.cpp" />
+    <ClCompile Include="DlgSpotMarket.cpp" />
+    <ClCompile Include="DlgStatus.cpp" />
+    <ClCompile Include="DlgTopToolbar.cpp" />
+    <ClCompile Include="DlgTradeInfo.cpp" />
+    <ClCompile Include="DlgTradeInfoPop.cpp" />
+    <ClCompile Include="DlgTrendChart.cpp" />
+    <ClCompile Include="DlgTrendChartSpot.cpp" />
+    <ClCompile Include="DlgTrendChart_D.cpp" />
+    <ClCompile Include="DlgUpdateSelect.cpp" />
+    <ClCompile Include="DlgWarnInfo.cpp" />
+    <ClCompile Include="DlgWarnInfoEx.cpp" />
+    <ClCompile Include="DpTable.cpp" />
+    <ClCompile Include="DrawBaseY.cpp" />
+    <ClCompile Include="drawlineDll.cpp" />
+    <ClCompile Include="DrawLineT.cpp" />
+    <ClCompile Include="DrawLineTool.cpp" />
+    <ClCompile Include="DynBasePic.cpp" />
+    <ClCompile Include="HisTechObj.cpp" />
+    <ClCompile Include="HtmlCtrl.cpp" />
+    <ClCompile Include="HyperlinkStatic.cpp" />
+    <ClCompile Include="IdentifyCode.cpp" />
+    <ClCompile Include="InfoTable.cpp" />
+    <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputKey.cpp" />
+    <ClCompile Include="InterfaceManager.cpp" />
+    <ClCompile Include="KOAClient.cpp" />
+    <ClCompile Include="KOAClientDoc.cpp" />
+    <ClCompile Include="LanguageInterface.cpp" />
+    <ClCompile Include="LimitPriceTrade.cpp" />
+    <ClCompile Include="LoginDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MarketPriceTrade.cpp" />
+    <ClCompile Include="markup.cpp" />
+    <ClCompile Include="PictureEx.cpp" />
+    <ClCompile Include="PriceInfoObj.cpp" />
+    <ClCompile Include="PriceInfoView.cpp" />
+    <ClCompile Include="PriceInfoWnd.cpp" />
+    <ClCompile Include="PriceListView.cpp" />
+    <ClCompile Include="PriceListWnd.cpp" />
+    <ClCompile Include="PricePic.cpp" />
+    <ClCompile Include="PriceVolObj.cpp" />
+    <ClCompile Include="Public.cpp" />
+    <ClCompile Include="ReportTable.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StockView.cpp" />
+    <ClCompile Include="SysProtyDlg.cpp" />
+    <ClCompile Include="SysSetDlg.cpp" />
+    <ClCompile Include="TechAnalysisBasePic.cpp" />
+    <ClCompile Include="TechAnalysisKLine.cpp" />
+    <ClCompile Include="TechAnalysisSelf.cpp" />
+    <ClCompile Include="TechCreator.cpp" />
+    <ClCompile Include="TechIndexFactory.cpp" />
+    <ClCompile Include="TradeDll.cpp" />
+    <ClCompile Include="TradeWnd.cpp" />
+    <ClCompile Include="translateStruct.cpp" />
+    <ClCompile Include="TypeCtlPic.cpp" />
+    <ClCompile Include="XPButton.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="KOAClient.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="KOAClient.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
